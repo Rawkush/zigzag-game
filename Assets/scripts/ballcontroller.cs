@@ -33,6 +33,7 @@ public class ballcontroller : MonoBehaviour {
         if(!Physics.Raycast(transform.position,Vector3.down,1f))// for checkin ball is above platformnor not
         {
             gameOver = true;
+            rb.velocity = new Vector3(0, -25f, 0);
         }
          if (Input.GetMouseButtonDown(0)&& !gameOver) { 
         
