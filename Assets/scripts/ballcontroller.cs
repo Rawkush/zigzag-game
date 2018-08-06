@@ -23,8 +23,8 @@ public class ballcontroller : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-                rb.velocity = new Vector3(speed, 0, 0);
-
+                 rb.velocity = new Vector3(speed, 0, 0);
+                started = true;
             }
         }
          if (Input.GetMouseButtonDown(0))
