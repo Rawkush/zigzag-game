@@ -19,7 +19,12 @@ public class ballcontroller : MonoBehaviour {
 	
 	// Up date is called once per frame
 	void Update () {
-		
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            SwitchDirection();
+        }
+
 	}
 
     void SwitchDirection()
