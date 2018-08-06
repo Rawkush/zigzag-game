@@ -7,7 +7,7 @@ public class ballcontroller : MonoBehaviour {
     private float speed;
     bool started; 
     Rigidbody rb;
-
+    bool gameOver;
     private void Awake() {
         rb = GetComponent<Rigidbody>();
     }
@@ -15,6 +15,7 @@ public class ballcontroller : MonoBehaviour {
     // Use this for initialization
     void Start () {
         started = false;
+        gameOver = false;
 	}
 	
 	// Up date is called once per frame
@@ -23,12 +24,18 @@ public class ballcontroller : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-                 rb.velocity = new Vector3(speed, 0, 0);
+
+                rb.velocity = new Vector3(speed, 0, 0);
                 started = true;
             }
         }
-         if (Input.GetMouseButtonDown(0))
+
+        if(!Physics.Raycast(transform.position,Vector3.down,1f))// for checkin ball is above platformnor not
         {
+            gameOver = true;
+        }
+         if (Input.GetMouseButtonDown(0)&& !gameOver) { 
+        
             SwitchDirection();
         }
 
