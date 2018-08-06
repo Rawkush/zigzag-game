@@ -14,7 +14,7 @@ public class ballcontroller : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        started = false;
 	}
 	
 	// Up date is called once per frame
