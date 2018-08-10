@@ -7,7 +7,7 @@ public class ballcontroller : MonoBehaviour {
     private float speed;
     bool started; 
     Rigidbody rb;
-    bool gameOver;
+    public static bool gameOver;
     private void Awake() {
         rb = GetComponent<Rigidbody>();
     }
@@ -36,7 +36,7 @@ public class ballcontroller : MonoBehaviour {
         {
             gameOver = true;
             rb.velocity = new Vector3(0, -25f, 0);
-            Camera.main.GetComponent<CameraaFollow>().gameOver =true;
+          //  Camera.main.GetComponent<CameraaFollow>().gameOver =true;
            
         }
          if (Input.GetMouseButtonDown(0)&& !gameOver) { 

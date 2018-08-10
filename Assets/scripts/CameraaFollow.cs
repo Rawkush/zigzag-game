@@ -17,6 +17,7 @@ public class CameraaFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        gameOver = ballcontroller.gameOver;
         if (!gameOver)
         {
             Follow();
