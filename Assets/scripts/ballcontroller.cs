@@ -30,6 +30,8 @@ public class ballcontroller : MonoBehaviour {
             }
         }
 
+        Debug.DrawRay(transform.position, Vector3.down, Color.red);
+
         if(!Physics.Raycast(transform.position,Vector3.down,1f))// for checkin ball is above platformnor not
         {
             gameOver = true;
