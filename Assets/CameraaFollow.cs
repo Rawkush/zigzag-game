@@ -27,7 +27,7 @@ public class CameraaFollow : MonoBehaviour {
     void Follow()
     {
         Vector3 pos = transform.position;
-        Vector3 targetpos = transform.position + offset;
+        Vector3 targetpos =ball.transform.position-offset;
         pos= Vector3.Lerp(pos, targetpos, lerpRate * Time.deltaTime);
         transform.position = pos;
     }
