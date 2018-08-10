@@ -7,7 +7,7 @@ public class CameraaFollow : MonoBehaviour {
     public GameObject ball;
     Vector3 offset;
     public float lerpRate;
-    bool gameOver;
+   public bool gameOver;
 	// Use this for initialization 
 	void Start () {
 
