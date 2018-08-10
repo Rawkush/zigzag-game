@@ -6,17 +6,21 @@ public class CameraaFollow : MonoBehaviour {
 
     public GameObject ball;
     Vector3 offset;
-    float lerpRate; 
+    public float lerpRate;
+    bool gameOver;
 	// Use this for initialization 
 	void Start () {
 
         offset = ball.transform.position - transform.position;
-
+        gameOver = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (!gameOver)
+        {
+            Follow();
+        }
 	}
 
 
@@ -24,7 +28,8 @@ public class CameraaFollow : MonoBehaviour {
     {
         Vector3 pos = transform.position;
         Vector3 targetpos = transform.position + offset;
-        Vector3.Lerp(pos, targetpos, lerpRate * Time.deltaTime);
+        pos= Vector3.Lerp(pos, targetpos, lerpRate * Time.deltaTime);
+        transform.position = pos;
     }
 
 }
